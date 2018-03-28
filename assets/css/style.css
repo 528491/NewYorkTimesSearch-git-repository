@@ -1,0 +1,17 @@
+.space {
+    margin-bottom: 20px;
+}
+
+.purple-bg {
+    background-color: rgb(66, 24, 66) !important;
+    color: white;
+}
+
+.purple-text {
+    color: rgb(66, 24, 66);
+}
+
+input {
+    width: 100%;
+    margin-top: 20px;
+}
