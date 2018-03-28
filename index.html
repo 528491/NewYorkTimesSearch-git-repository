@@ -1,3 +1,16 @@
+<!-- 
+
+To Do:
+
+(feel free to use this section to make checklists, brainstorm, etc.)
+
+1. Store the input values in variables.
+2. Do something with those variables and the API.
+3. Display results in the appropriate area.
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,68 +24,92 @@
 </head>
 
 <body>
-    <!-- <header class = "jumbotron">
-        <h2>New York Times Search</h2>
-    </header> -->
 
     <div class = "container">
 
+        <!-- Title of the Page -->
         <div class = "row jumbotron purple-bg" id = "page-title">
             <h1>New York Times Search</h1>
         </div>
 
-        <div class = "row space"></div>
-        <!-- <div class = "row space"></div> -->
-        <!-- <div class = "row space"></div> -->
+        <!-- Spacing -->
+        <div class = "row space"></div>     
 
-        <!-- <div class = "row purple-bg"></div> -->
-
-        <div class = "row">
+        <!-- Title of Main Form -->
+        <div class = "row" id = "search-title-row">
             <div class = "col-12 purple-bg" id = "search-title">
                 <h5>Search Parameters</h5>
             </div>
         </div>
 
-        <div class = "row border border-dark">
-            <div class = "col-12 d-flex flex-column justify-content-around">
-                <section class = "row space"></section>
-                <!-- <section id = "searchterm-section" class = "d-flex flex-column">
-                    <div class = "purple-text">Search Term</div>
-                    <input type = "text" name = "searchterm">
-                </section> -->
+        <!-- Body of the form -->
+        <div class = "row border border-dark" id = "form-row">
+            <div class = "col-12 d-flex flex-column justify-content-around" id = "form-area">
 
-                <form>
+                <section class = "row space"></section>
+
+                <!-- NOTE: I made the "name" and the "id" attributes of these inputs the same name.
+                            If this does not help, feel free to change one of those fields.-->
+                <form id = "mainform">
                     <div class = "purple-text">Search Term</div>
-                    <input type = "text" name = "searchterm">
+                    <input type = "text" name = "searchterm" id = "searchterm">
 
                     <div class = "space"></div>
 
                     <div class = "purple-text">Number of Records to Retrieve</div>
-                    <input type = "text" name = "numRecords">
+                    <input type = "text" name = "numRecords" id = "numRecords">
 
                     <div class = "space"></div>
 
                     <div class = "purple-text">Start Year (Optional)</div>
-                    <input type = "text" name = "startyear">
+                    <input type = "text" name = "startyear" id = "startyear">
 
                     <div class = "space"></div>
 
                     <div class = "purple-text">End Year (Optional)</div>
-                    <input type = "text" name = "endyear">
+                    <input type = "text" name = "endyear" id = "endyear">
 
                     <div class = "space"></div>
+
+                    <!-- Holds the Buttons -->
+                    <div class = "d-flex flex-row" id = "buttonholder">
+                        <button type = "submit" id = "searchbutton">Search</button>
+                        <div class = "h-space"></div>
+                        <button type = "reset" id = "resetbutton">Clear Results</button>
+                    </div>
+
+                    <div class = "space"></div>
+
                 </form>
+
             </div>
         </div>
 
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+        <div class = "row space"></div>
 
 
 
+        <!-- Results will pop up down here.
+                Maybe we can make this area appear only after the form has been submitted.
+        -->
 
+        <!-- Title of Results Area -->
+        <div class = "row" id = "results-title-row">
+            <div class = "col-12 purple-bg" id = "results-title">
+                <h5>Top Articles</h5>
+            </div>
+        </div>
 
-
-
-
+        <!-- Results will pop up down here, in the #results-area element. -->
+        <div class = "row border border-dark" id = "results-area-row">
+            <div class = "col-12" id = "results-holder">
+                <div class = "space"></div>
+                <div id = "results-area"></div>
+                <div class = "space"></div>
+            </div>
+        </div>
 
     </div>
 </body>
