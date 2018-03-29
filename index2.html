@@ -27,33 +27,28 @@ To Do:
 <body>
 
     <div class = "container">
-
-        Title of the Page
-        <div class = "row jumbotron purple-bg justify-content-center" id = "page-title">
+        <div class = "row jumbotron purple-bg justify-content-center">
             <h1>New York Times Search</h1>
         </div>
-
+    </div>
         <!-- Spacing -->
         <div class = "row space"></div>     
-
+    <div class="container">
         <!-- Title of Main Form -->
-        <div class = "row" id = "search-title-row">
-            <div class = "col-12 purple-bg">
+        <div class = "row col-12 purple-bg">         
                 <h5>Search Parameters</h5>
-            </div>
         </div>
 
         <!-- Body of the form -->
-        <div class = "row border border-dark" id = "form-row">
-            <div class = "col-12 d-flex flex-column justify-content-around" id = "form-area">
+        <div class = "row border border-dark col-12 d-flex flex-column justify-content-around">
 
                 <section class = "row space"></section>
 
                 <!-- NOTE: I made the "name" and the "id" attributes of these inputs the same name.
                             If this does not help, feel free to change one of those fields.-->
-                <form id = "mainform">
+                <form>
                     <div class = "purple-text">Search Term</div>
-                    <input type = "text" name = "searchterm" id = "searchTerm">
+                    <input type = "text" name = "searchTerm" id = "searchTerm">
 
                     <div class = "space"></div>
 
@@ -63,28 +58,27 @@ To Do:
                     <div class = "space"></div>
 
                     <div class = "purple-text">Start Year (Optional)</div>
-                    <input type = "text" name = "startyear" id = "startYear">
+                    <input type = "text" name = "startYear" id = "startYear">
 
                     <div class = "space"></div>
 
                     <div class = "purple-text">End Year (Optional)</div>
-                    <input type = "text" name = "endyear" id = "endYear">
+                    <input type = "text" name = "endYear" id = "endYear">
 
                     <div class = "space"></div>
-
+                </form>
                     <!-- Holds the Buttons -->
-                    <div class = "d-flex flex-row" id = "buttonholder">
-                        <button type = "submit" id = "searchBtn">Search</button>
+                    <div class = "d-flex flex-row">
+                        <button id="searchMe">Search Me</button>
                         <div class = "h-space"></div>
                         <button type = "reset" id = "resetBtn">Clear Results</button>
                     </div>
 
                     <div class = "space"></div>
 
-                </form>
+               
 
             </div>
-        </div>
 
         <div class = "row space"></div>
         <div class = "row space"></div>
@@ -113,5 +107,44 @@ To Do:
         </div>
 
     </div>
+
+    <div class="container">
+
+        <!-- <button id="searchMe">Search Me</button> -->
+    </div>
+
+    <!-- <script type="text/javascript">
+        $("#searchMe").on("click",function () {
+    //alert("Search btn clicked.");
+    // var search_term = document.getElementById("searchTerm").value;
+    // var records_limit = document.getElementById("numRecords").value;
+    // var start_date = document.getElementById("startYear").value;
+    // var end_date = document.getElementById("endYear").value;
+
+
+
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "9652878909cb4e5584a00be6cc2abfa9",
+  'q': "Obama",
+  'begin_date': "20080101",
+  'end_date': "20161231",
+  'sort': "newest",
+  'fl': "web_url,keywords,headline,pub_date,source",
+  'facet_field': "main"
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).then(function(response) {
+    console.log("here");
+  console.log(response);
+}).fail(function(err) {
+  throw err;
+});
+
+});
+    </script> -->
+    <script type="text/javascript" src="assets/js/search.js"></script>
 </body>
 </html>
