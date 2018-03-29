@@ -20,6 +20,16 @@ input {
     margin-top: 20px;
 }
 
+p {
+    size: 8px;
+    color: black;
+}
+
+li:hover {
+    opacity: .75;
+    background-color: lightgray;
+}
+
 /* #page-title, .jumbotron {
     text-align: center;
 } */
