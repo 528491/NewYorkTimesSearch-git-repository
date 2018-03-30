@@ -3,9 +3,15 @@ $("#searchBtn").on("click", function () {
 
   var search_term = $("#searchTerm").val();
   var numb_records = $("#numbRecords").val();
-  var start_year = $("#startYear").val();
+  var start_year =   $("#startYear").val();
+  if(start_year ==""){
+    start_year="1800";
+  }
   var end_year = $("#endYear").val();
-//http://api.nytimes.com/svc/archive/v1/2016/11.json?api-key={your-api-key}
+  var d=new Date();
+  if(end_year ==""){
+    end_year= (d.getFullYear()).toString();;
+  }
   var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   queryUrl += '?' + $.param({
     'api-key': "9652878909cb4e5584a00be6cc2abfa9",
@@ -13,7 +19,7 @@ $("#searchBtn").on("click", function () {
     'begin_date': start_year+"0101",
     'end_date': end_year+"1231",
     'sort': "newest",
-    'fl': numb_records,//"web_url,keywords,headline,pub_date,source",
+    'fl': numb_records,
     'facet_field': "main"
   });
   console.log("search_term: "+ search_term);
