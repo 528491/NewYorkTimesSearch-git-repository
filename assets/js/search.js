@@ -3,8 +3,15 @@ $("#searchBtn").on("click", function () {
 
   var search_term = $("#searchTerm").val();
   var numb_records = $("#numbRecords").val();
-  var start_year = $("#startYear").val();
+  var start_year =   $("#startYear").val();
+  if(start_year ==""){
+    start_year="1800";
+  }
   var end_year = $("#endYear").val();
+  var d=new Date();
+  if(end_year ==""){
+    end_year= (d.getFullYear()).toString();;
+  }
 //http://api.nytimes.com/svc/archive/v1/2016/11.json?api-key={your-api-key}
   var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   queryUrl += '?' + $.param({
